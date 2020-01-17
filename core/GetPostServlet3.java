@@ -10,23 +10,18 @@ import javax.servlet.http.HttpServletResponse;
 
 @WebServlet("/getpost3")
 public class GetPostServlet3 extends HttpServlet {
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		response.setContentType("text/html; charset=UTF-8");
 		PrintWriter out = response.getWriter();
-		out.print("<h2>¿äÃ» ¹æ½Ä : "+request.getMethod()+"</h2>");
-		out.print("<h2>Query ¹®ÀÚ¿­ : "+
+		String method = request.getMethod();
+		if(method.equals("POST")) {
+			request.setCharacterEncoding("utf-8");
+		}
+		out.print("<h2>ìš”ì²­ ë°©ì‹ : "+method+"</h2>");
+		out.print("<h2>Query ë¬¸ìì—´ : "+
 		                  request.getParameter("name")+"</h2>");
 		out.close();
-		System.out.println("GET ¹æ½Ä ¼öÇà");
-	}
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		response.setContentType("text/html; charset=UTF-8");
-		PrintWriter out = response.getWriter();
-		request.setCharacterEncoding("UTF-8");
-		out.print("<h2>¿äÃ» ¹æ½Ä : "+request.getMethod()+"</h2>");
-		out.print("<h2>Query ¹®ÀÚ¿­ : "+request.getParameter("name")+"</h2>");
-		out.close();
-		System.out.println("POST ¹æ½Ä ¼öÇà");
+		System.out.println(method + " ë°©ì‹ ìˆ˜í–‰");
 	}
 }
 

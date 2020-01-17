@@ -13,20 +13,20 @@ public class GetPostServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		response.setContentType("text/html; charset=UTF-8");
 		PrintWriter out = response.getWriter();
-		out.print("<h2>¿äÃ» ¹æ½Ä : "+request.getMethod()+"</h2>");
-		out.print("<h2>Query ¹®ÀÚ¿­ : "+
+		out.print("<h2>ìš”ì²­ ë°©ì‹ : "+request.getMethod()+"</h2>");
+		out.print("<h2>Query ë¬¸ìì—´ : "+
 		                  request.getParameter("name")+"</h2>");
 		out.close();
-		System.out.println("GET ¹æ½Ä ¼öÇà");
+		System.out.println("GET ë°©ì‹ ìˆ˜í–‰");
 	}
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		response.setContentType("text/html; charset=UTF-8");
 		PrintWriter out = response.getWriter();
 		request.setCharacterEncoding("UTF-8");
-		out.print("<h2>¿äÃ» ¹æ½Ä : "+request.getMethod()+"</h2>");
-		out.print("<h2>Query ¹®ÀÚ¿­ : "+request.getParameter("name")+"</h2>");
+		out.print("<h2>ìš”ì²­ ë°©ì‹ : "+request.getMethod()+"</h2>");
+		out.print("<h2>Query ë¬¸ìì—´ : "+request.getParameter("name")+"</h2>");
 		out.close();
-		System.out.println("POST ¹æ½Ä ¼öÇà");
+		System.out.println("POST ë°©ì‹ ìˆ˜í–‰");
 	}
 }
 

@@ -13,15 +13,15 @@ public class GetPostServlet2 extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		response.setContentType("text/html; charset=UTF-8");
 		PrintWriter out = response.getWriter();
-		out.print("<h2>¿äÃ» ¹æ½Ä : "+request.getMethod()+"</h2>");
-		out.print("<h2>Query ¹®ÀÚ¿­ : "+
+		out.print("<h2>ìš”ì²­ ë°©ì‹ : "+request.getMethod()+"</h2>");
+		out.print("<h2>Query ë¬¸ìì—´ : "+
 		                  request.getParameter("name")+"</h2>");
 		out.close();
-		System.out.println(request.getMethod()+"¹æ½Ä ¼öÇà");
+		System.out.println(request.getMethod()+"ë°©ì‹ ìˆ˜í–‰");
 	}
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		response.setContentType("UTF-8");
-		doPost(request, response);
+		request.setCharacterEncoding("UTF-8");
+		doGet(request,response);
 	}
 }
 

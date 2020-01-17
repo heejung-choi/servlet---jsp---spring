@@ -44,17 +44,15 @@ https://search.naver.com/search.naver?sm=top_hty&fbm=0&ie=utf8
         이 때 호출되는 메서드는 init(), service(), destory(), doGet(), doPost() 등이다.
         하여 이 메서드들을 선택적으로 오버라이딩해서 구현한다.
    (4) 서블릿에서 수행 결과를 출력할 때
-        - 요청해온 브라우저로의 출력(응답) - HttpServletResponse 의 getWriter() 를
-                                                     호출해서 클라이언트로의 출력 스트림 객체 생성
-                                                     해서 출력
-        - 표준 출력 : System.out.println() - 톰캣서버의 콘솔창에 출력
-    (5) 서블릿이 수행하는데 필요한 데이터를 요청 보내오는 클라이언트로 부터 전달받을 수
-         있다. 이 때 전달받는 데이터를 쿼리 문자열이라 한다.
-	HttpServletRequest 의 getParameter():String
+        - 요청해온 브라우저로의 출력(응답) - HttpServletResponse 의 getWriter() 를 호출해서 클라이언트로의 출력 스트림 객체 생성  해서 출력
+             - 표준 출력 : System.out.println() - 톰캣서버의 콘솔창에 출력
+    (5) 서블릿이 수행하는데 필요한 데이터를 요청 보내오는 클라이언트로 부터 전달받을 수 있다. 이 때 전달받는 데이터를 쿼리 문자열이라 한다.
+   HttpServletRequest 의 getParameter():String
              또는 getParameterValues():String[]  를 사용한다.          
  - 수행상의 특징
     (1) 서블릿을 요청할 때는 "/컨텍스트루트명/서블릿의매핑명" 형식의 URI 를 사용한다.
     (2) 서블릿의 요청은 
+    
        - 서블릿을 요청하는 URL 문자열을 브라우저의 주소 필드에 입력해서 직접 요청:GET
        - <a> 태그로 요청:GET
        - <form> 태그를 통해서 요청:GET/POST
@@ -63,7 +61,7 @@ https://search.naver.com/search.naver?sm=top_hty&fbm=0&ie=utf8
     (4) 여러 클라이언트가 동일한 서블릿을 동시 요청하면 하나의 서블릿 객체를 공유해서
          수행한다.
     (5) 최초 요청시의 수행 흐름
-          init(),     service() -> doGet(),     destroy()     
+	      init(),     service() -> doGet(),     destroy()     
 		          -> doPost()
 
 
