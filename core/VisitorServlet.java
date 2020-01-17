@@ -15,6 +15,7 @@ import javax.servlet.http.HttpServletResponse;
 public class VisitorServlet extends HttpServlet {	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		response.setContentType("text/html; charset=UTF-8");
+		/* "text/html;세미콜론 뒤에 공백은 줘도되고 안줘도 된다. */		
 		PrintWriter out = response.getWriter();
 		request.setCharacterEncoding("UTF-8"); /* post 방식인 경우 이것을 해줘야 한다.*/
 		
