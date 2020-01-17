@@ -1,3 +1,5 @@
+# 20200116 정리 내용
+
 [ Query String (쿼리 문자열 ) ]
   웹 클라이언트에서 웹 서버에 정보를 요청할 때 추가로 전달하는 문자열
   이 문자열을 정해 규칙으로 구성되어 전달되어야 하는데 이규칙을
@@ -97,3 +99,26 @@ https://search.naver.com/search.naver?sm=top_hty&fbm=0&ie=utf8
   op=%EC%A7%91%EC%97%90+%EA%B0%80%EC%9E%90...%0D%0A%EC%A7%91%EC%97%90&
   h_1=-%E3%85%85-&
   h_2=%3D%E3%85%85%3D
+
+
+
+# 20200117 정리 내용
+
+- 이름을 똑같이 주고 value 값을 다르게 해서 해야 한다. 체크박스를 체크 안하면 hobby는 제외되고 출력된다.
+
+- required는 필수라는 의미이다.
+
+- 애초에 required 라면 필수입력이지만, required가 아니면 선택항목이기 때문에 서버에서 체크해야 한다.
+
+  - name=duke&passwd=1234&age=&gender=female
+
+    ​	request.getparameter("name")  -> "duke"
+
+    ​	request.getparameter("passwd")  -> "1234"
+
+    ​	request.getparameter("age")  -> "" 값이 없으면 ""
+
+    ​	request.getparameter("hobbu") -> null 애초에 hobby에 대한 입력이 없으면 null return
+
+    
+
