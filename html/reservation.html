@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+@import url(//fonts.googleapis.com/earlyaccess/jejuhallasan.css);
+@import url(//fonts.googleapis.com/earlyaccess/hanna.css);
+h1 {
+	font-size:2em;	
+   	color: white;
+   	 
+}
+section{
+	font-family: 'Hanna', sans-serif;
+	background: linear-gradient(to bottom, #33ccff 0%, #ff99cc 75%);
+	width : 50%;			
+	margin-left : auto;
+	margin-right : auto;
+	padding: 12px 20px;
+}
+
+div{
+	font-family: 'Hanna', sans-serif;
+}
+</style>
+
+</head>
+<body>
+<section>
+
+<h1>펜션 예약 서비스</h1>
+<hr>
+<form action="/sedu/reservation" method="post">
+<br>
+예약자명: <input type="text" name="name" required>
+<br>
+<br>
+예약암호: <input type="password" name="password" required>
+<br>
+<br>
+룸선택 : 
+	둘리 <input type="radio" required name="room" value="둘리">
+	희동 <input type="radio" required name="room" value="희동">
+	도우너 <input type="radio" required name="room" value="도우너">
+	또치<input type="radio" required name="room" value="또치">
+<br>
+<br>
+추가요청 사항 : 
+	바베큐 <input type="checkbox" name="service" value="바베큐">
+	수영장 <input type="checkbox" name="service" value="수영장">
+	낚시 <input type="checkbox" name="service" value="낚시">
+	조식<input type="checkbox" name="service" value="조식">
+<br>
+
+<div>
+예약날짜: <input type="date" name="date">
+</div>
+<br>
+<br>
+<div>											
+<input type="submit" value="보내기버튼 !!">
+<input type="reset" value="다시작성하기">
+</div>	
+</form>
+</section>
+
+
+
+</body>
+</html>
