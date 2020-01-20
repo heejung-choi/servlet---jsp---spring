@@ -277,3 +277,63 @@ core 패키지 : FlowServlet(/flow)
 
 
 
+# 20200120 정리 내용
+
+​		
+
+- **getRequestDispatcher 방식 -->forward()**는 컨텍스트패스 이후 부분을 줘야 한다.
+
+  ```java
+  RequestDispatcher rd = request.getRequestDispatcher("/sedu/first.html");
+  이렇게 주면 404에러가 난다.(설명 Origin 서버가 대상 리소스를 위한 현재의 representation을 찾지 못했거나, 그것이 존재하는지를 밝히려 하지 않습니다.) 
+  이렇게 하면 sedu 뒤에 또 seud가 붙기 때문이다. 따라서 아래와 같이 해야 한다.
+  RequestDispatcher rd = request.getRequestDispatcher("/html/first.html"); 
+  ```
+
+  
+
+edu,sedu는
+
+os 입장에서 폴더 이다.
+
+Exlipse 입장에서 Web Project
+
+Tomcat 입장에서  Context(Context Path : / edu, /sedu)
+
+Developer 입장에서 Web Application
+
+
+
+
+
+- **redirect 방식**
+
+1. Request URL: http://localhost:8000/sedu/redirect
+2. Request Method: GET
+3. Status Code: 302
+4. 바뀐 URL :  http://localhost:8000/sedu/html/first.html
+   - redirect 방식은 요청지정대상에 제한이 없다. forward는 제한이 있다.
+
+
+
+### 상태정보 유지 기술
+
+- 쿠키
+  - 쿠키는 웹서버가 필요에 의해 웹 클라이언트인 브라우저에게 저장하는 네임벨류쌍의 데이터이다.
+  - 장점: 서버에 오버헤드를 주지 않는다.
+  - 단점: 클라이언트에 보관하는 거여서 보안적으로 기대하기 어렵다. 클라이언트가 제거하면 끝이다.
+  - 서블렛/ 자바스크립트로 구현 가능
+  - 쿠키는 저장할 수 있는 데이터에 제한이 있고, 최대 유지 기간이 3년이다.
+- HttpSession 객체를 이용한 방법
+  - 모든 클라이언트 정보를 서버에 저장
+  - 단점: 서버 업그레이드
+
+
+
+- 멤버변수 :
+  - 멤버변수는 한번 메모리 할당되면 서버가 운영되는 내내 변수의 공간이 모든 클라이언트에 의해 공유된다.
+- 지역변수:
+  - 요청시 마다 메모리 각각 할당, 유지하지 않는다. 
+- 세션 객체:(배열이든, 다른 객체이든 무관하다.)
+  - 세션이 유지되는 동안, 클라이언트별로 개별적으로 요청
+
