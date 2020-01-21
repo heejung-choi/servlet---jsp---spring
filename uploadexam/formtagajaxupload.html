@@ -14,8 +14,7 @@
 <form id="f">
    파일<input type="file" name="theFile"  multiple><br>
   <input type="submit" value="업로드" 
-                     onclick="uploadAjax();return false;">
-</form>
+                     onclick="uploadAjax();return false;"><!-- from 태그는 submit 버튼이벤트 수행 안하게 하는것 -->
 <script>
 function uploadAjax() {
 	var xhr = new XMLHttpRequest();

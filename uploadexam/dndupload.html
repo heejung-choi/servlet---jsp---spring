@@ -25,14 +25,16 @@
 	}
 	function dropped(e) {
 		e.preventDefault();
-		var files = e.dataTransfer.files;
+		var files = e.dataTransfer.files;//드롭된 파일 정보 얻어냄
 		var xhr = new XMLHttpRequest();
 		var result = "";
-		var data = new FormData();
+		var data = new FormData();//멀티파트로 처리하는 것, 멀티파트로 구성하겠다.
 		for (var f = 0; f < files.length; f++) {
 				data.append('myuploadfile'+f, files[f]);
 		}
-		xhr.open("POST", "/sedu/upload", false);
+		xhr.open("POST", "/sedu/upload", false);// 비동기 통신하지 않았다.
+		//응답이 올 때까지 기다린다.
+		//기존에는 get 방식이였으나 이번에는 post
 		xhr.send(data);			
 		if(xhr.status == 200){
 			 result = "업로드 성공!!";				
