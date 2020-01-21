@@ -26,9 +26,3 @@ public class SessionTestServlet2 extends HttpServlet {
 }
 
 
-
-
-
-
-
-

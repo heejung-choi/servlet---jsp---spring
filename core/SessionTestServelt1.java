@@ -15,7 +15,7 @@ import javax.servlet.http.HttpSession;
  */
 @WebServlet("/sessiontest1")
 public class SessionTestServelt1 extends HttpServlet {
-	private static final long serialVersionUID = 1L; 
+
 	int member_v=0;//멤버변수는 한번 메모리 할당되면 서버가 운영되는 내내 변수의 공간이 모든 클라이언트에 의해 공유된다.
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
