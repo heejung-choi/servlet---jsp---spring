@@ -53,6 +53,7 @@ public class VisitorDBServlet extends HttpServlet {
 			out.print("</table>");
 		}
 		catch(SQLException e) {
+			System.out.println("<h2>오류 발생</h2>");
 			e.printStackTrace();
 		}
 	}
