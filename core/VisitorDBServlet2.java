@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
@@ -78,12 +79,18 @@ public class VisitorDBServlet2 extends HttpServlet {
 		}
 		
 		//DB서버 접속, Statement 객체 생성, "SELECT * FROM VISITOR" SQL 명령문 수행
-		String sql = "insert into visitor values('"+name+"',sysdate,'"+memo+"')";
+		//String sql = "insert into visitor values('"+name+"',sysdate,'"+memo+"')";
+		//여기서 인용부호 잘못주면 ORA-00917: missing comma로 에러가 난다. 그래서 아래와 같이 변경해준다.
+		String sql = "insert into visitor values(?,sysdate,?)";//? 동적 파라미터 나중에 정한다는 뜻
 		System.out.println(sql);
 		try (	Connection conn = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:XE", "jdbctest", "jdbctest");
-				Statement stmt = conn.createStatement();			
+				//Statement stmt = conn.createStatement();//위의 인용부호 변경을 위해 create를 prepare로 바꿔준다.
+				PreparedStatement pstmt = conn.prepareStatement(sql);//객체생성시 미리 SQL명령을 설정하는 것이다. 
 				) {
-			stmt.executeUpdate(sql);//객체를 만드는것이 아니기 때문에 try에 있을 수 없다.s이여서 안에 넣었던 것이다.	
+			pstmt.setString(1,name);//객체를 만드는것이 아니기 때문에 try에 있을 수 없다.s이여서 안에 넣었던 것이다.	
+			pstmt.setString(2,memo);//수행시킬 sql 명령이 여러가지라면 statment가 유리하고 		
+			//많지 않다면 prepared가 좋다. 또 이미지와 같은 것도 Binary를 사용하면 할수있다.
+			pstmt.executeUpdate();
 			out.print("<h2>방명록글 저장 성공!!</h2>");
 		}
 		catch(SQLException e) {

@@ -390,3 +390,43 @@ HTML 이전에는 파일을 한개만 선택 가능했음
 3.0 이전부터는 multipart도 새로 구현해야 했었다.
 
 (2) 파일에 대한 Drag & Drop 기능을 이용하여 업로드할 파일을 윈도우즈 탐색기에서 선택하여 서버에 올릴 수 있다. Ajax 기술과 연계하여 
+
+
+
+
+
+# 20200122 정리내용
+
+[Servlet에서의 DB  연동]
+
+(1) JDBC 드라이버 로딩(class.forName())
+
+(2) DB서버 접속(DriverManager.getConnection("jdbcurl", "계정", "암호"))
+
+(3)SQL 문을 수행하기 위한 Statement PreparedStatement 객체를 생성
+
+(4) SELECT - executeQuery() : ResultSet (next(), getXXX())
+
+INSERT, DELETE, UPDATE, CREATE TABLE, DROP TABLE ....
+
+-executeUpdate() : int(SQL 명령에 의해 변화된 행의 갯수)
+
+
+
+visitorMain.html - 방명록 리스트 보기 ---> /visitordb(GET)
+
+​								방명록 작성하기 -> visitorForm.html  ---> /visitordb(POST)
+
+
+
+visitorDBServlet(/visitordb)
+
+GET - visitor 테이블의 데이터를 모두 읽어와서 테이블 형식으로 브라우저에 출력 
+
+POST - 전송되는 Query 문자열을 가지고 visitor 테이블에 저장
+
+
+
+**objdbc6.jar파일을 
+
+edu -> webcontent->web-inf-> lib에 붙여넣기 하기
