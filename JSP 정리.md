@@ -75,7 +75,6 @@ JSTL
 
 - 각각의 태그의 기능에 맞춰서  Servlet으로 바뀔때 적당한 코드를 넣어 다른 위치에 들어간다.
 
-- request.getHeader("referer")는 jsp를 요청한 html의 URL을 호출해준다
-
-
+- request.getHeader("referer")는 jsp를 요청한 html의 URL을 호출해준다.
+- <%! 에서 !는 태그 자체 임으로 %와 !사이에 공백이 있으면 안된다.
 
