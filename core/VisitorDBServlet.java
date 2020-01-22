@@ -56,6 +56,8 @@ public class VisitorDBServlet extends HttpServlet {
 			System.out.println("<h2>오류 발생</h2>");
 			e.printStackTrace();
 		}
+		out.print("<hr><a href='/sedu/html/visitorForm.html'>방명록 메인화면으로 가기</a>");
+		out.close();
 	}
 	//방명록 읽기
 	
@@ -88,6 +90,9 @@ public class VisitorDBServlet extends HttpServlet {
 			e.printStackTrace();
 			out.print("<h2>방명록글 저장 실패!!</h2>");
 		}
+		out.print("<hr><a href='/sedu/html/visitorForm.html'>방명록 메인화면으로 가기</a>");
+		out.close();
+		
 	}
 		
 		
