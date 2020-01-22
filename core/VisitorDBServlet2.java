@@ -15,8 +15,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 
-@WebServlet("/visitordb")
-public class VisitorDBServlet extends HttpServlet {
+@WebServlet("/visitordb2")
+public class VisitorDBServlet2 extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
 	//GET - visitor 테이블의 데이터들을 모두 읽어 와서 테이블 형식으로 브라우저로 출력
@@ -83,8 +83,7 @@ public class VisitorDBServlet extends HttpServlet {
 		try (	Connection conn = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:XE", "jdbctest", "jdbctest");
 				Statement stmt = conn.createStatement();			
 				) {
-			stmt.executeUpdate(sql);//객체를 만드는것이 아니기 때문에 try에 있을 수 없다.
-			//ResultSet rs = stmt.executeQuery(sql);위의 try안에 있는것은 객체를 만드는 것이여서 안에 넣었던 것이다.	
+			stmt.executeUpdate(sql);//객체를 만드는것이 아니기 때문에 try에 있을 수 없다.s이여서 안에 넣었던 것이다.	
 			out.print("<h2>방명록글 저장 성공!!</h2>");
 		}
 		catch(SQLException e) {
