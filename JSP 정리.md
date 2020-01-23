@@ -90,3 +90,28 @@ JSTL
 - request.getHeader("referer")는 jsp를 요청한 html의 URL을 호출해준다.
 - <%! 에서 !는 태그 자체 임으로 %와 !사이에 공백이 있으면 안된다.
 
+
+
+# 2020 01 23 정리
+
+### date 속성 다르게 해서 주는 방법
+
+```
+<%
+String date = request.getParameter("date");
+String pattern = "(\\d{4})-(\\d{2})-(\\d{2})";
+Pattern p = Pattern.compile(pattern);
+Matcher m = p.matcher(date);
+String datestr="";
+while(m.find()) {
+	datestr = String.format("%s년%s월%s일", m.group(1), m.group(2), m.group(3));
+}
+%>
+<li>예약날짜: <%= datestr %> </li>
+```
+
+
+
+- exception은 jsp 내장객체 변수이다. 이것은 아무때나 쓸 수 없다. 예외가 발생해야 쓸수 있는 것이여서
+  page isErrorPage="true" 페이지 지시자 태그에 isErrorPage가 ture여야만 사용할 수 있다.
+  기본값이 false이기 때문에

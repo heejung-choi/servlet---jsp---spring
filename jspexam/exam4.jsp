@@ -15,6 +15,7 @@
 	}
 %>
 <h2>당신의 이름은 <%= request.getParameter("name")%>이군요!!</h2>
-<a href= "<%= request.getHeader("referer") %>"> 입력화면으로 </a>
+<a href= "<%= request.getHeader("referer") %>"> 입력화면으로 </a> 
+<!-- request.getHeader("referer")는 jsp를 요청한 html의 URL을 호출해준다 -->.
 </body>
 </html>
