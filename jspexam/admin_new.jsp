@@ -8,5 +8,6 @@
 이 화면은 관리자를 위한 화면입니다. <br>
 전달된 파라미터 : <span style="color:blue;">
 <%=request.getParameter("message")%></span>
+
 </BODY>
 </HTML>

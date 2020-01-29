@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"  errorPage="errorPage.jsp"%>
+<!--     실행하다가 오류가 나면 errorPage="errorPage.jsp"를 수행해서 에러페이지를 보여주게 하는것이다. -->
 <!DOCTYPE html>
 <html>
 <head>
