@@ -49,7 +49,7 @@ xxxService(xxxbiz) - Service Object : 이런 저런 서비스 로직을 지원�
 
 이때 jsp는 블랭크를 넣어주고 수정작업을 해주고 저장을 해야 반영된다
 
-
+# EL
 
 ```
 <% 
@@ -83,4 +83,20 @@ el에서 **문자열 결합은 +=으로 해줘야 한다. **
 ```
  ${ !empty param.message }<hr>  <!-- param.message 가 비어있으면 --><!-- param은 쿼리의 네임벨류쌍을 해쉬맵에 담고있는 내장객체이다. -->
 ```
+
+el에서 null이면 아무값도 반환하지 않는다. null이라는 것도 반환 안한다.
+
+el에서의 변수는 특정스코프에서 반환되고 있는 것의 이름이 변수라고 할 수 있다.
+
+
+
+
+
+# 시퀀스 생성 및 조회
+
+**create sequence meeting_seq start with 1 increment by 1;
+--1부터 시작하고 1씩 증가한다.: start with 1 increment by 1;
+--시퀀스는 오라클에서만 지원한다.
+--테이블 이름 뒤에 seq를 붙이는게 관례이다.
+select * from user_sequences; **
 
