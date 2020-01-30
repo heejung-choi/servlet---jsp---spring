@@ -13,7 +13,7 @@ import javax.servlet.http.HttpServletResponse;
 public class EduServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		request.setCharacterEncoding("UTF-8");
+		request.setCharacterEncoding("UTF-8");///setChatagterEncoding은 반드시 여기서 해야한다.
 		int score=(Integer.parseInt(request.getParameter("score")));	
 		System.out.print("평균점수:"+score);	
 		RequestDispatcher req;
