@@ -8,11 +8,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-<% 
-String name=request.getParameter("name");
-%>
-
-<h2><%= name %>님은 A등급입니다. 우수한 성적이네요(^^).</h2>
+<h2>${param.name} 님은 A등급입니다. 우수한 성적이네요(^^).</h2>
 <img src="/mvc/images/A.png" width="300px">
 <br>
 <a href=http://localhost:8000/mvc/htmlexam/eduForm.html>성적입력 화면으로</a>
