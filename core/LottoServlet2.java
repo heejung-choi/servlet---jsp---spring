@@ -32,7 +32,9 @@ public class LottoServlet2 extends HttpServlet {
 		req = request.getRequestDispatcher("/jspexam/success.jsp");
 		count[0]=4;}
 		else
-		req = request.getRequestDispatcher("/jspexam/fail.jsp");}		
+		req = request.getRequestDispatcher("/jspexam/fail.jsp");		
+		}
+		
 		req.forward(request,response);
 		
 		
