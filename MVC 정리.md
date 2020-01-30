@@ -64,3 +64,23 @@ String name=request.getParameter("name");
 
 param은 el의 내장객체 
 
+
+
+name=&
+
+
+
+${header.referer}
+
+${header.user-agent} //요청하는 클라이언트의 정보
+
+--> ${header["user-agent"]} //.을 쓰기 적합하지 않을 때에만 대괄호를 쓴다.
+
+
+
+el에서 **문자열 결합은 +=으로 해줘야 한다. **
+
+```
+ ${ !empty param.message }<hr>  <!-- param.message 가 비어있으면 --><!-- param은 쿼리의 네임벨류쌍을 해쉬맵에 담고있는 내장객체이다. -->
+```
+
