@@ -39,7 +39,7 @@ public class CalcServlet extends HttpServlet {
 		System.out.println("결과값:"+result);
 	request.setAttribute("calcresult",result);
 	request.setAttribute("calcerror",error);	
-	RequestDispatcher rd = request.getRequestDispatcher(url);	
+	RequestDispatcher rd = request.getRequestDispatcher(url);//request객체는 또 있는지 체크할 필요가 없다.
 	rd.forward(request,response);	
 	}
 }
