@@ -10,7 +10,7 @@ import javax.servlet.http.HttpServletResponse;
 import model.dao.VisitorDAO;
 import model.vo.VisitorVO;
 @WebServlet("/visitor")
-public class VisitorServletDB extends HttpServlet {
+public class VisitorServletDB extends HttpServlet  {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String keyword = request.getParameter("keyword");		
 		VisitorDAO dao = new VisitorDAO();
