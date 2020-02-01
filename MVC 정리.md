@@ -1,4 +1,4 @@
-# 20200129 정리
+# 2020년 01월 29일 정리
 
 xxxVO - Value Object : 값을 보관하는 용도의 객체
 
@@ -45,9 +45,9 @@ xxxService(xxxbiz) - Service Object : 이런 저런 서비스 로직을 지원�
 
 # 2020 01 30 정리
 
-사용되는 것을 먼저 붙어넣기 하고 사용하는 것을 붙여넣기 하는것이 좋다. 
+- 사용되는 것을 먼저 붙어넣기 하고 사용하는 것을 붙여넣기 하는것이 좋다. 
 
-이때 jsp는 블랭크를 넣어주고 수정작업을 해주고 저장을 해야 반영된다
+- 이때 jsp는 블랭크를 넣어주고 수정작업을 해주고 저장을 해야 반영된다
 
 # EL
 
@@ -67,8 +67,6 @@ param은 el의 내장객체
 
 
 name=&
-
-
 
 ${header.referer}
 
@@ -90,8 +88,6 @@ el에서의 변수는 특정스코프에서 반환되고 있는 것의 이름이
 
 
 
-
-
 # 시퀀스 생성 및 조회
 
 **create sequence meeting_seq start with 1 increment by 1;
@@ -102,7 +98,7 @@ select * from user_sequences; **
 
 
 
-# 2020 01 31
+# 2020년 01월 31일 정리
 
 한사람은 DAO
 한사람은 서블릿/ jsp를 만들고나서 제대로 만들었는지는 실행을 시킨 후에 알 수 있고 짝궁이 서블릿/jsp를 만들때까지 기다려야 한다.
@@ -130,14 +126,45 @@ date-local 연월일 시분을 모두 받겠다라는 것
 
 
 
+getParameter() -> String 타입 리턴
+
+setParameter()  -> String 타입 저장
+
+getAttribute() -> Object 타입 리턴
 
 
-# 2020 02 01
 
-JSP
+# 2020년 02월 01일 정리
 
-ASP, PHP
+# JSTL
 
-HTML안에 필요한 만큼의 동적으로 처리해주는 언어인데.
+- JSP(자바)** -> 실행될때 서블릿으로 바뀐다. 필요한 만큼의 자바코드를 넣으면 되서 진입장벽이 낮다.
+  - sun 사는 ASP , PHP와 구별하기 위해 아래와 같은 기능을 추가했다.
+    - Custom Tag : 필요한 기능의 태그를 직접 만들 수 있는 기능
+      - Apache Open Group : JSTL(JavaServer Pages Standard Tag Library)을 만들었다.
+      - 만들어진 태그들의 표준
+      - core library , xml library(xml파싱을 하려면 복잡하지만 이것이 있으면 해준다.), sql library, fmt library
+    - Action Tag : JSP가 제공하는 태그로 기능, 구현방법이 정해져 있는 태그
 
-서버라면 다른 프로그래밍 언어,  클라이언트라면 자바스크립트로 하면 된다.
+
+
+- **ASP(비주얼베이직), PHP** -> 실행될때 CGI으로 바뀐다(요청시마다 프로그램이 내렸다가 올렸다가 하고, 요청한만큼 메모리에 오른다는 단점이 있다.)
+
+
+
+- JSTL은 HTML안에 필요한 만큼의 동적으로 처리해주는 언어인데. 서버라면 다른 프로그래밍 언어,  클라이언트라면 자바스크립트로 하면 된다.
+
+
+
+# JSTL 사용
+
+### core 라이브러리
+
+- 변수 선언, 조건문, 반복문 등 간단한 프로그램 로직 구현을 대신할 수 있는 기능의 커스텀 태그들이 지원되는 라이브러리이다.  JSP에서 JSTL의 core 라이브러리를 사용하려면 다음과 같이 taglib 지시자 태그를 정의해야 한다. uri 속성에는 정해진 URL 문자열을 사용해야 하면 prefix는 임의로 설정할 수 있지만 일반적으로 core의 약어인 c를 많이 사용한다.
+
+- 지시자 태그에 어떤 커스텀 태그를 사용하겠다라고 해줘야 한다. prefix는 원하는 것으로 바꿔도 된다. 다만, 관례적으로 c라고 많이 한다.
+
+  ``` 
+  <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+  ```
+
