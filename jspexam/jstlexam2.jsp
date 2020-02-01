@@ -15,7 +15,7 @@
 <c:set var="color" value="green-session"  scope="session"/>
 <c:set var="color"  value="yellow-application"  scope="application"/>
 
-color = ${color} <br>
+color = ${color} <br>  <!-- 스코프 지정안하면 page 속성이다. -->
 
 pageScope.color = ${pageScope.color}<br>
 requestScope.color = ${requestScope.color}<br>

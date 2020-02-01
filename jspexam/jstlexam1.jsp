@@ -3,6 +3,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %> 
 <!DOCTYPE html>
 <html>
+<!-- set out remove에 대한 예제 -->
 <head>
 <meta charset="UTF-8">
 <title>JSTL 테스트</title>
@@ -14,20 +15,21 @@
 <c:set var="num2">
 10.5
 </c:set>
-<c:set var="today" value="<%= new java.util.Date() %>" />
-변수 num1 = ${ num1 } <br>
+<c:set var="today" value="<%= new java.util.Date() %>" /> <!-- set -->
+변수 num1 = ${ num1 } <br> <!-- out태그로 표현 -->
 변수 num1 = <c:out value="${num1}"  /> <br>
 변수 num2 = <c:out value="${num2}"  /> <br>
 변수 num3 = <c:out value="${num3}"  default="기본 값"/> <br>
 num1 + num2 = ${num1 + num2} <br>
 오늘은 ${today} 입니다.
 <hr>
-<c:remove var="num1" />
+<c:remove var="num1" /> <!-- remove -->
 삭제한 후의 num1 = ${num1} <br>
 삭제한 후의 num1 + num2 = ${num1 + num2}<br>
 삭제한 후의 num1 = <c:out value="${num1}"  default="기본 값"/> 
 <hr>
-<c:set var="map" value="<%= new java.util.HashMap<String,String>() %>" />
+<c:set var="map" value="<%= new java.util.HashMap<String,String>() %>" /> <!-- map이라는 것에 저장되어있는 객체(hashmap) -->
+<!-- property가 key이다. -->
 <c:set target="${map}"  property="st1" value="듀크" />
 <c:set target="${map}"  property="st2" value="둘리" />
 변수 map에 저장된 st1 값: ${map.st1}<br>

@@ -32,7 +32,7 @@
 	<hr>
 	<ul>
 	<c:choose> 
-  		<c:when test="${param.name == 'duke'}" > 
+  		<c:when test="${param.name == 'duke'}" > <!-- 첫번째 when 태그가 참이면 다음에는 수행되지 않는다. --> 
     		<li> 당신의 이름은 ${param.name} 입니다.
   		</c:when> 
   		<c:when test="${param.age >= 30}" > 
