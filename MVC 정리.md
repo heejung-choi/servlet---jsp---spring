@@ -213,3 +213,17 @@ getAttribute() -> Object 타입 리턴
 def와 /abc 사이의 것을 꺼내고 싶다면 xpath를 써야 한다.
 ```
 
+- xpath식에 el을 사용할때에는 $를 사용해야 한다.
+
+- ```
+  <x:out select="$xdata//학생[1]/이름" /> <x:out select="$xdata//학생[1]/@번호" /><br>
+  ```
+
+- 	요청방식이 get인지 확인하는 것을 
+  	request.getmethod하면 알수있는데 이것은 el 변수가 아니다.
+  	el에서 하려면 pageContext.request.method을 해야한다.
+  	pageContext.만 jsp내장객체이면서 el내장객체이다.
+  	jsp내장객체가 필요할때 pageContext를 사용해서 하면 된다.
+  		<c:when test="${ pageContext.request.method == 'GET' }"> 
+
+Query
