@@ -22,18 +22,19 @@
 <h3>[ 배열 ]</h3>
 <c:set var="intArray" value="<%= new int[] {1,2,3,4,5} %>" />
 <!--  el에서는 배열을 만들 수 없다. 따라서 표현식 태그를 사용하여 자바 코드로 한다.  -->
-<c:forEach var="i" items="${intArray}" begin="2" end="4"><!--  3번째 원소부터 5번째 원소까지 뽑아내게 된다. -->
+<c:forEach var="i" items="${intArray}" begin="2" end="4">
     [${i}]
+    <!--  begin end가 없다면 원소만큼만 돌았겠지만  begin end가 있기 때문에 3번째 원소부터 5번째 원소까지 뽑아내게 된다. -->
 </c:forEach>
 
 <h3>[ 값을 변화시키면서 반복처리 ]</h3>
 <c:set var="sum" value="0" />
-<c:forEach var="i" begin="1" end="100" step="2">
+<c:forEach var="i" begin="1" end="100" step="2"> <!-- begin 부터 end까지의 것을 var라는 변수에 담는 것이다. step -> 2씩 증가-->
 	<c:set var="sum" value="${sum + i}" />
 </c:forEach>
 <h4>결과 = ${sum}</h4>
 
-<h4>구구단: 4단</h4>
+<h4>구구단: 4단</h4> <!-- 1부터 시작하여 1씩 증가 -->
 <c:forEach var="i"  begin="1"  end="9">
    4 * ${i} = ${4 * i}&nbsp;&nbsp;
 </c:forEach>
