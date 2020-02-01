@@ -11,9 +11,9 @@
 <h2>&lt;c:forEach&gt;와 &lt;c:forTokens&gt;태그 예제</h2>
 <hr>
 <h3>[ 맵 ]</h3>
-<c:set var="map" value="<%= new java.util.HashMap<String,String>() %>" />
-<c:set target="${map}"  property="st1" value="듀크" />
-<c:set target="${map}"  property="st2" value="둘리" />
+<c:set var="map" value="<%= new java.util.HashMap<String,String>() %>" /><!--  hashmap의 key와 value를 나타내고 있다. -->
+<c:set target="${map}"  property="st1" value="듀크" /><!--  st1의 키값으로 듀크 -->
+<c:set target="${map}"  property="st2" value="둘리" /><!--  st2의 키값으로 둘리 -->
 <c:set target="${map}"  property="st3" value="또치" />
 <c:forEach var="data"  items="${map}">
    [ ${data.key} = ${data.value} ]
@@ -21,7 +21,8 @@
 
 <h3>[ 배열 ]</h3>
 <c:set var="intArray" value="<%= new int[] {1,2,3,4,5} %>" />
-<c:forEach var="i" items="${intArray}" begin="2" end="4">
+<!--  el에서는 배열을 만들 수 없다. 따라서 표현식 태그를 사용하여 자바 코드로 한다.  -->
+<c:forEach var="i" items="${intArray}" begin="2" end="4"><!--  3번째 원소부터 5번째 원소까지 뽑아내게 된다. -->
     [${i}]
 </c:forEach>
 
