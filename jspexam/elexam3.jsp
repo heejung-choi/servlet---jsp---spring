@@ -13,6 +13,7 @@ name 변수의 값 : ${name}<br>
 <% String name="듀크"; %>
 name 변수의 값(표현식 태그) : <%= name %><br>
 name 변수의 값(EL) : ${name}<br>
+<!-- el에서의 변수는 특정스코프에서 반환되고 있는 것의 이름이 변수라고 할 수 있다. -->
 <% pageContext.setAttribute("name", "자바");  %>
 name 변수의 값 : ${name}<br>
 pageScope.name 변수의 값 : ${pageScope.name}<br>

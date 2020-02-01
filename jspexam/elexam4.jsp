@@ -19,7 +19,7 @@ mylist.add(new TestBean("도우너"));
 pageContext.setAttribute("list", mylist); 
 %>
 <h3>객체의 멤버 접근</h3>
-${ today.year }년 ${ today.month }월 ${ today.date }일
+${ today.year }년 ${ today.month }월 ${ today.date }일  <!-- today.getyear와 같은 결과 -->
 <h3>컬렉션의 객체 사용</h3>
 ${ list[0].name }-${ list[1].name }-${ list[2].name }<br>
 <h3>클래스의 정적 멤버 사용</h3>
