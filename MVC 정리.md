@@ -168,3 +168,30 @@ getAttribute() -> Object 타입 리턴
   <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
   ```
 
+- jsp --> HTML 으로 되게 하고 싶다.
+
+- jsp --> 웹페이지 ------> HTML + JSP 태그 + Java
+
+  ​			규격화된 문서 ->XML + JSP태그 + Java
+
+  ​										JSON + JSP태그 + Java
+
+
+
+```
+<h1>
+<form>
+<br>
+<%=  %> out.print의 아규먼트로 넣음
+<%   %>
+<jsp:forward  /> 콜론 앞에 붙는 것을 접두어 라고 한다. jsp인지 알려주기 위해 하는 것이다.
+만약 <forward  />라고 한다면, jsp 태그가 아니다. 
+<jsp:useBean  />
+<c:if/> jstl의 core라이브러리에 가서 c로 지정된 if태그의 형식에 맞춰 가져온다.
+
+<c:set> -> setAttribut와 같은 기능
+
+```
+
+
+
