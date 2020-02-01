@@ -43,8 +43,8 @@
 콤마와 점을 구분자로 사용:<br>
 <c:forTokens var="token" 
              items="빨강색,주황색.노란색.초록색,파랑색,남색.보라색"
-             delims=",.">
-<button>${token} </button>
+             delims=",."><!--  dellims로 , 또는 .를 쓰겠다는 뜻 -->
+<button>${token} </button> <!-- token에 담아서 버튼으로 출력 -->
 </c:forTokens>
 </body>
 </html>

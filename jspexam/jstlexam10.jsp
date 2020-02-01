@@ -10,7 +10,12 @@
 </head>
 <body>
 <c:choose>
-	<c:when test="${ pageContext.request.method == 'GET' }">
+	<c:when test="${ pageContext.request.method == 'GET' }"> <!-- c:when -> core라이브러리의 when 태그 사용 -->
+<!-- 	요청방식이 get인지 확인하는 것을 
+	request.getmethod하면 알수있는데 이것은 el 변수가 아니다.
+	el에서 하려면 pageContext.request.method을 해야한다.
+	pageContext.만 jsp내장객체이면서 el내장객체이다.
+	jsp내장객체가 필요할때 pageContext를 사용해서 하면 된다. -->
 		<h2>점검하려는 버스의 번호를 입력하세요</h2>
 		<hr>
 		<form method="POST" action="/sedu/jspexam/jstlexam10.jsp">
@@ -24,11 +29,11 @@
 	     <c:catch var="ex">
 	     	<c:import var="xmldata" url="http://ws.bus.go.kr/api/rest/busRouteInfo/getBusRouteList?serviceKey=%2BjzsSyNtwmcqxUsGnflvs3rW2oceFvhHR8AFkM3ao%2Fw50hwHXgGyPVutXw04uAXvrkoWgkoScvvhlH7jgD4%2FRQ%3D%3D&strSrch=${param.num }" />
 	        <x:parse xml="${xmldata }" varDom="xdata" />
-	        <x:if select="$xdata//headerCd = 0">
+	        <x:if select="$xdata//headerCd = 0"><!--  xml 라이브러리 사용시 x -->
 	        	<c:set var="busnum" value="${ param.num }"/>
 	        	<x:forEach select="$xdata//itemList">
 	        		<x:if select="busRouteNm = $busnum">	        		  
-	        			버스번호 : <x:out select="busRouteNm"/><br>
+	        			버스번호 : <x:out select="busRouteNm"/><br> <!-- <busRouteId> -> 고유번호 -->
      					기점 : <x:out select="stStationNm"/><br>
      					종점 : <x:out select="edStationNm"/><br>
      					라우트아이디 : <x:out select="busRouteId"/><br>

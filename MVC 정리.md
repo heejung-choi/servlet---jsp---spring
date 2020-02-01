@@ -193,5 +193,23 @@ getAttribute() -> Object 타입 리턴
 
 ```
 
+- xpath는  XML 문서의 노드를 정의하기 위하여 경로식을 사용하며, 수학 함수와 기타 확장 가능한 표현들이 있다.
+  /wikimedia/projects/project/@name -> name속성명으로 인식
+  /wikimedia/projects/project/editions/edition[@language="English"]
+  wikimedia 루트 엘먼트/projects식으로 path를 다 지정하는데 이게 길다면
+  //edition[@language="English"] 이렇게도 가능하다.
+  // 조상이 누구든 간에 라는 뜻 또는 아래와같이도  가능하다.
+  /wikimedia//edition[@language="English"] 
 
+
+
+```
+<abc>
+ㅋㅋㅋ
+	<def>MMM</def>
+	ㅠㅠㅠ
+</abc>
+주로 css선택자를 사용 하지만
+def와 /abc 사이의 것을 꺼내고 싶다면 xpath를 써야 한다.
+```
 

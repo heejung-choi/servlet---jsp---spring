@@ -18,8 +18,9 @@ table, td, th {
 <hr>
 <c:catch var="err">   
   <c:import var="weather" 
- url="http://www.kma.go.kr/wid/queryDFSRSS.jsp?zone=1168064000">
+ url="http://www.kma.go.kr/wid/queryDFSRSS.jsp?zone=1168064000"> 
   </c:import>
+  <!--  값이 정해져 있을때는 url에 적용하면 되고  정해져 있지 않다면 param으로 아래 주석과 같이 해도 된다. -->
   <%-- <c:import var="weather" 
  url="http://www.kma.go.kr/wid/queryDFSRSS.jsp">
     <c:param name="zone" value="1168064000"/>
