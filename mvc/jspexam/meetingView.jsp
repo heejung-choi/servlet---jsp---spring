@@ -56,7 +56,7 @@ font-family: 'Hanna', sans-serif;
 		<td><%= vo.getTitle() %></td>
 		<td><%= vo.getMeetingDate() %></td>
 		<td><a href=/mvc/meeting?action=delete&id=<%=vo.getId()%>><img src="/mvc/images/hu.jpg" width=50 height=50 ></a></td>
-		<td><a href=/mvc/meeting?action=update&id=<%=vo.getId()%>><img src="/mvc/images/update.png" width=50 height=50 ></a></td>		
+		<td><a href=/mvc/meeting?action=update&id=<%=vo.getId()%>><img src="/mvc/images/edit.png" width=50 height=50 ></a></td>		
 	</tr>
 <%
     	}
