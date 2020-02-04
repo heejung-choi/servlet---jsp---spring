@@ -51,7 +51,8 @@ public class VisitorDAO {
 				Statement stmt = conn.createStatement();
 				ResultSet rs = stmt.executeQuery
 				("select name, to_char(writedate, 'yyyy\"년\" mm\"월\" dd\"일\"'), memo "
-						+"from visitor where memo like '%"+keyword+"%'");) { //키워드가 들어간것을 뽑아줘
+						+"from visitor where memo like '%"+keyword+"%'");
+				) { //키워드가 들어간것을 뽑아줘
 			VisitorVO vo;
 			while(rs.next()) {
 				vo = new VisitorVO();
