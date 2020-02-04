@@ -4,18 +4,109 @@
 <!DOCTYPE html>
 <html>
 <head><style>
-	td{
-		border-bottom : 2px dotted green;
-	}
-	tr:hover{
-		background-color : pink;	
-		font-weight : bold;
-	}
-	td:nth-child(2){
-		width : 400px;
-	}
+@import url(//fonts.googleapis.com/earlyaccess/hanna.css);
+
+table.type1 {
+	border-collapse: separate;
+    border-spacing: 1px;
+    text-align: center;
+    line-height: 1.5;
+    margin: 20px 10px;
+
+}
+
+table.type1 th {
+    width: 155px;
+    padding: 10px;
+    font-weight: bold;
+    vertical-align: top;
+    color: #fff;
+    background:#e7708d ;
+}
+table.type1 td {
+    width: 155px;
+    padding: 10px;
+    vertical-align: top;
+    border-bottom: 1px solid #ccc;
+    background: #eee;
+}
+
+#d {
+	width: 300px;
+}
+
+#all {
+	width : 50%;
+	margin-left : auto;
+	margin-right : auto;	
+	padding: 50px;
+	border-style: dotted dashed solid double;
+	border-color: gray;
+	font-family: 'Hanna', sans-serif;
+		
+}
+h1{
+	 font-size: 3em;
+  	text-align:center;
+}
+textarea {
+  width: 100%;
+  height: 150px;
+  padding: 12px 20px;
+  box-sizing: border-box;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+  background-color: #eee;
+  font-size: 16px;
+  resize: none;
+}
+input[type=text] {
+  width: 80%;
+  box-sizing: border-box;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+  background-color: #eee;
+  background-image: url('searchicon.png');
+  background-position: 10px 10px; 
+  background-repeat: no-repeat;
+  padding: 12px 20px 12px 40px;
+  -webkit-transition: width 0.4s ease-in-out;
+  transition: width 0.4s ease-in-out;
+}
+
+input[type=text]:focus {
+  width: 100%;
+}
+select {
+width: 200px;
+padding: .8em .5em;
+border: 1px solid #999;
+border-radius: 0px;
+
+}
+
+.button {
+  display: inline-block;
+  padding: 10px 15px;
+  font-size: 10px;
+  cursor: pointer;
+  text-align: center;
+  outline: none;
+  color: #fff;
+  background-color: #e7708d;
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0 2px #999;
+}
+
+.button:hover {background-color: #b366ff}
+
+
+
 </style>
 <body>
+<div id="all">
 <%
 	ArrayList<NewsVO> list = (ArrayList<NewsVO>)request.getAttribute("list");
 	NewsVO listview = (NewsVO)request.getAttribute("listview");
@@ -24,8 +115,8 @@
 	
 	if(list !=null){
 %> 
-	<h2>뉴스게시판</h2><hr>
-	<table>
+	<h1>&emsp;&emsp;<span style="color:red">★</span><span style="color:\#ff6633" >뉴</span><span style="color: #ffff33">스</span><span style="color:#66ff33"> 게</span><span style="color:#33ccff">시</span><span style="color: #3333ff">판</span><span style="color:#9933ff">★</span> &emsp;&emsp; </h1><hr>
+	<table class="type1">
 		<tr>
 		<th>번호</th>
 		<th>제목</th>
@@ -36,24 +127,35 @@
 		for(NewsVO vo : list){%>
 			<tr>					
 			<td><%= vo.getId() %></td>		
-			<td onClick="location.href='/mvc/news?action=read&newsid=<%=vo.getId()%>'"> <%= vo.getTitle() %></td>
-			<td><%= vo.getWriter() %></td>
-			<td><%= vo.getWritedate() %></td>
+			<td onClick="location.href='/mvc/news?action=read&newsid=<%=vo.getId()%>'" > <%= vo.getTitle() %></td>
+			<td onClick="location.href='/mvc/news?action=listwriter&newswriter=<%=vo.getWriter()%>'"><%= vo.getWriter() %></td>
+			<td id="d"><%= vo.getWritedate() %></td>
 			<td><%= vo.getCnt() %></td>
 			</tr><%
-		} 
+		} 		
 		
 		
 	
 %>
-<!--  제목을 클릭하면 뉴스서블릿을 요청하면
-클릭한 글의 아이디를 서버로 보낸다.
-제목을 클릭하면 action read nw
-서버에서는 아이디에 해당되는 글을 뽑아온다. 글 한개 vo객체로 받아오면
-request 객체 전체 리스트는 list 변수로 담아 
-밑에 vo의 선택한 글의 내용 form 태그 출력 -->
 	</table>
 	<hr>
+	
+	<div>
+	<form method ="get" action ="/mvc/news">	
+	<select name="searchType">
+	  <option value="title">제목</option>
+	  <option value="writer">작성자</option>	 
+	</select>
+	<br>
+	<input type="text" placeholder="Search.." name="key">	
+	<br>
+	<br>
+	<input type ="submit"  value="뉴스 검색" class="button">
+	</form>
+	</div>	
+	<hr>
+	
+	
 <%}	
 %>	
 <%
@@ -66,7 +168,8 @@ request 객체 전체 리스트는 list 변수로 담아
 	
 	%>
 
-<button onclick="displayDiv(1);">뉴스 작성</button>
+<button onclick="displayDiv(1);" class="button">뉴스 작성</button>
+<br>
 <div id="write"  style="display:none">
 <form method = "post" action = "/mvc/news">
 <input type="hidden" name="action" value="insert">
@@ -77,12 +180,12 @@ request 객체 전체 리스트는 list 변수로 담아
 <br>
 <textarea placeholder="내용을 입력해주세요" rows="3" cols="30" name ="content" ></textarea>
 <br>
-<input type = "submit" value = "등록">
-<input type = "reset" value = "재작성">
-<input type ="button" value="취소"  onclick="displayDiv(2)">
+<input type = "submit" value = "등록" class="button">
+<input type = "reset" value = "재작성" class="button">
+<input type ="button" value="취소"  onclick="displayDiv(2)" class="button">
 </form>
 </div>
-
+<hr>
 <% 
 if(listview !=null){
 %>
@@ -128,6 +231,7 @@ function displayUpdateForm(cv) {
 
 
 </script>
+</div>
 </body>
 </html>
 
