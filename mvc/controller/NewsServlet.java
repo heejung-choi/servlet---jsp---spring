@@ -19,28 +19,43 @@ public class NewsServlet extends HttpServlet {
 		NewsDAO dao = new NewsDAO();
 		String action = request.getParameter("action");		
 		String newsid =request.getParameter("newsid");
-		
+		String newswriter =request.getParameter("newswriter");
+		String key =request.getParameter("key");
+		String searchType =request.getParameter("searchType");
 		if(action==null) {
+			if(searchType==null) {			
 			List<NewsVO> list = dao.listAll();
 			for(NewsVO vo : list) {
 				System.out.println(vo.getTitle());
 			}
-			request.setAttribute("list", list);
+			request.setAttribute("list", list);}
+			
+			else {
+				List<NewsVO> list = dao.search(key,searchType);
+				for(NewsVO vo : list) {
+					System.out.println(vo.getTitle());
+				}
+				request.setAttribute("list", list);				
+			}
 		}			
 		else if(action.equals("read")){		
 		NewsVO listview =dao.listOne(Integer.parseInt(newsid));
 		List<NewsVO> list = dao.listAll();
 		for(NewsVO vo : list) {
 			System.out.println(vo.getTitle());
+		request.setAttribute("listview", listview);		
+		request.setAttribute("list", list);	
+		}
 		}
 		
-		request.setAttribute("listview", listview);	
-		
-		request.setAttribute("list", list);	
-		// id 선택하면 리스트 출력하는 문 여기 		
-		
-		
-		}					
+		else if(action.equals("listwriter")){		
+			List<NewsVO> list = dao.listWriter(newswriter);
+			for(NewsVO vo : list) {
+				System.out.println(vo.getTitle());
+			}
+			request.setAttribute("list", list);
+		}
+						
 		else if(action.equals("delete")) {		
 		System.out.println("id는?"+newsid);
 		System.out.println("");
