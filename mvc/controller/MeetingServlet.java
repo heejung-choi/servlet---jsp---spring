@@ -32,8 +32,7 @@ public class MeetingServlet extends HttpServlet {
 				request.setAttribute("msg", keyword+"를 담고있는 글이 없어용");
 			} else {
 				request.setAttribute("list", list);
-			}
-		}			
+			}}			
 		}	
 		else if(action.equals("delete")) {			
 		String id =request.getParameter("id");	
@@ -46,7 +45,7 @@ public class MeetingServlet extends HttpServlet {
 		request.setAttribute("list", list);
 		}			
 		}			
-		request.getRequestDispatcher("/jspexam/meetingView.jsp").forward(request, response);
+		request.getRequestDispatcher("/jspexam/meetingView_jstl.jsp").forward(request, response);
 	}
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		request.setCharacterEncoding("UTF-8");		
@@ -64,7 +63,7 @@ public class MeetingServlet extends HttpServlet {
 		} else {
 			request.setAttribute("msg", name+"님의 글이 입력에 실패했어요!!ㅠㅠㅠㅠ");
 		}
-		request.getRequestDispatcher("/jspexam/meetingView.jsp")
+		request.getRequestDispatcher("/jspexam/meetingView_jstl.jsp")
 		           .forward(request, response);
 	}
 }
