@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+<bean id="After" class="exam1.AfternoonGreetingImpl"/> 
+<bean id="Even" class="exam1.EveningGreetingImpl"/> 
+<bean id="Morning" class="exam1.MorningGreetingImpl"/> 
+<bean id="Night" class="exam1.NightGreetingImpl"/> 
+<bean id="localtime" class="java.time.LocalTime" factory-method="now" />                    
+<!-- 생성자가 없으면 팩토리 메서드가 있다. -->
+</beans>
