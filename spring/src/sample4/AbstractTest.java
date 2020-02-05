@@ -6,6 +6,7 @@ public abstract class AbstractTest {
 	public static AbstractTest getInstance(){
 		GregorianCalendar cal=new GregorianCalendar();
 		int day=cal.get(Calendar.DAY_OF_WEEK);
+		/* abstract class는 팩토리 메서드여야 하고 해당클래스 내용과 같아야 한다. */
 		AbstractTest test = null;
 		switch(day)
 		{

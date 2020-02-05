@@ -9,6 +9,7 @@
 	<constructor-arg value="Dooly"/>	
 </bean>
 <bean id="obj2" class="sample3.UserVo">
+<!-- bean태그의 갯수만큼 객체가 생성된다. -->
 	<constructor-arg value="Duke"/>	
 </bean>
 </beans>

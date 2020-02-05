@@ -3,7 +3,8 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
-<bean id="foo0" class="sample2.Foo" /> <!-- prototyp/sigleton(default) --> <!-- scope="prototype" -->
+<bean id="foo0" class="sample2.Foo" scope="prototype"/> <!-- prototyp/sigleton(default) --> <!-- scope="prototype" -->
+<!-- scope="prototype"을 하면 미리미리 객체생성을 안하고 필요할때 객체생성한다, -->
 <!-- foo0 아규먼트 안받는 것이 출력된다. -->
 <bean id="foo1" class="sample2.Foo">
 	<constructor-arg value="XYZ"/>	
