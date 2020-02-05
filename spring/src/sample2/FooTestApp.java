@@ -7,6 +7,7 @@ public class FooTestApp {
 	public static void main(String[] args) {
 		ApplicationContext factory
     		= new ClassPathXmlApplicationContext("sample2/applicationContext.xml");
+		//bean설정의 이름은 중요하지 않다.
 		System.out.println("**** Container Initialization End ****");
 		
 		System.out.println("\n\nScope(singleton/prototype)");

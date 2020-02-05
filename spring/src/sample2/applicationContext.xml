@@ -3,21 +3,28 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
-<bean id="foo0" class="sample2.Foo" scope="prototype"/> <!-- prototyp/sigleton(default) -->
+<bean id="foo0" class="sample2.Foo" /> <!-- prototyp/sigleton(default) --> <!-- scope="prototype" -->
+<!-- foo0 아규먼트 안받는 것이 출력된다. -->
 <bean id="foo1" class="sample2.Foo">
 	<constructor-arg value="XYZ"/>	
+<!-- 스트링형을 아규먼트로 -->
 </bean>
 <bean id="foo2" class="sample2.Foo">
 	<constructor-arg  value="ABC"/>
 	<constructor-arg  value="100"/>
+	<!-- 스트링형, int를 아규먼트로 -->
+	<!-- 일반 값이면 value 객체면 ref -->
 </bean>
 <bean id="foo3" class="sample2.Foo">
 	<constructor-arg index="1"  type="int"  value="50"/>
 	<constructor-arg index="0"  type="java.lang.String" value="xyz"/>
 	<constructor-arg index="2"  type="boolean" value="true"/>
+	<!-- 스트링형, int, boolean 형을 아규먼트로 -->
+	<!-- index를 생략하면 작성 순서에 따라 호출된다. -->
 </bean>
 <bean id="foo4" class="sample2.Foo">
 	<constructor-arg ref="bar" />
+	<!-- bar를 아규먼트로 -->
 </bean>
 <bean id="bar"  class="sample2.Bar" />
 	

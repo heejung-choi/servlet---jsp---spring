@@ -58,6 +58,6 @@ Eclipse EE - Eclipse for Java Developer + WTP(플러그인:pligin) +STS 추가�
 
 - 프로젝트 관리 도구 주로 API를 관리해준다.
 
-
-
 - 스프링컨테이너가 관리해주는 것 bean
+- 일반 값이면 value 객체면 ref
+-  index를 생략하면 작성 순서에 따라 호출된다.
