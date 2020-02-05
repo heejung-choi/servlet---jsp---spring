@@ -13,3 +13,4 @@ public class TestApp {
 		((ClassPathXmlApplicationContext)factory).close();
 	}
 }
+//main에서 실행시켜야 값이 나온다.

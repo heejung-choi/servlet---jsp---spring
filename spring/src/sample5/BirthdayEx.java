@@ -10,7 +10,7 @@ public class BirthdayEx {
 		
 		//DateVo ob1=(DateVo)factory.getBean("hong");
 		DateVo ob1 = factory.getBean("hong", DateVo.class);
-		System.out.println(ob1.toString());
+		System.out.println(ob1.toString()); //toString() 생략해도 된다. 자동으로 변환된다.
 			
 		DateVo  ob2=factory.getBean("lee", DateVo.class);
 		System.out.println(ob2.toString());
