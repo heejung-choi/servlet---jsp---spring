@@ -4,7 +4,7 @@ public class MessageBeanImpl implements MessageBean{
 	private String fruit;
 	private int cost;	
 	public MessageBeanImpl() {
-		super();
+		super(); //조상의 생성자 호출
 		System.out.println("MessageBeanImpl Default Constructor Call");
 	}
 	public MessageBeanImpl(String fruit) {
@@ -18,7 +18,7 @@ public class MessageBeanImpl implements MessageBean{
 		System.out.println("setCost() Call");
 	}
 
-	@Override
+	@Override //오버라이딩
 	public void sayHello() {      
 		System.out.println(fruit + "   " + cost);
 	}
