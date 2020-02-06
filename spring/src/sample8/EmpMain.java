@@ -6,7 +6,7 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 public class EmpMain {
 	public static void main(String[] args) {
 		ApplicationContext factory =
-				   new ClassPathXmlApplicationContext("sample8/bean2.xml");
+				   new ClassPathXmlApplicationContext("sample8/bean1.xml");
 		
 		Developer b1 = (Developer)factory.getBean("developer");
 		System.out.println(b1.toString());

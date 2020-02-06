@@ -5,16 +5,10 @@ import java.time.LocalTime;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
-
-
-
-
-
-
 public class GreetingTest {
 	public static void main(String[] args) {
 		ApplicationContext factory = new ClassPathXmlApplicationContext("exam1/beans.xml");		
-		LocalTime local = (LocalTime) factory.getBean("localtime");			
+		LocalTime local = (LocalTime)factory.getBean("localtime");			
 		int hour = local.getHour(); 
 		System.out.println(hour);		
 		

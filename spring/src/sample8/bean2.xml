@@ -8,6 +8,8 @@
 <!-- How to set properties using XML namespace -->
 <bean id="developer" class="sample8.Developer"  
         					c:_0-ref="emp1"  c:_1="Development 1 Team"/>
+        					<!-- 이름만 줄때가 있고 c:_0-ref 줄때가 있을때가 있다.
+        					_0은 첫번째 매개변수 _1은 두번째 매개변수 -->
 <bean id="engineer" class="sample8.Engineer"   
         					c:emp-ref="emp2"  c:dept="Technology 1 Team"/>
 
