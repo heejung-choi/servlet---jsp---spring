@@ -55,9 +55,15 @@ Eclipse EE - Eclipse for Java Developer + WTP(플러그인:pligin) +STS 추가�
 ### 아파치 메이븐
 
 - 아파치 메이븐(Apache Maven)은 자바용 프로젝트 관리 도구이다. 아파치 앤트의 대안으로 만들어졌다. 아파치 라이선스로 배포되는 오픈 소스 소프트웨어 이다.
-
 - 프로젝트 관리 도구 주로 API를 관리해준다.
+
+
+
+# Spring 
 
 - 스프링컨테이너가 관리해주는 것 bean
 - 일반 값이면 value 객체면 ref
--  index를 생략하면 작성 순서에 따라 호출된다.
+- index를 생략하면 작성 순서에 따라 호출된다.
+- 문서 형식 정의(Document Type Definition, DTD)는 컴퓨터 용어로, SGML 계열의 마크업 언어에서 문서 형식을 정의하는 것이다. SGML을 비롯해 HTML, XHTML, XML 등에서 쓰인다.
+- XML Schema는 더 세세히 지정할 수 있다.
+- autowire : 객체를 생성할때 자동으로 결합해달라는 의미이다.
