@@ -126,3 +126,18 @@ http://localhost:8000/springedu/hello
 my.spring.springedu
 
 마지막 패키지명은 project 명과 같게 해야 한다.
+
+![image-20200207134711247](C:\Users\student\AppData\Roaming\Typora\typora-user-images\image-20200207134711247.png)
+
+![image-20200207134740365](C:\Users\student\AppData\Roaming\Typora\typora-user-images\image-20200207134740365.png)
+
+
+
+# Spring MVC
+
+spring project는 webcontent가 없다.
+
+![image-20200207141545306](C:\Users\student\AppData\Roaming\Typora\typora-user-images\image-20200207141545306.png)
+
+src-main-webapp-resoures에 이미지, html파일을 넣어야 한다. 다른곳에 넣으면 인식을 못한다. ->클라이언트에 직접 넣을 수 있는것만 넣어야 한다.
+
