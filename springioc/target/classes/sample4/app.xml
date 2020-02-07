@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+<bean id="test" class="sample4.AbstractTest" 
+                          factory-method="getInstance"/> 
+                          <!-- factory-method 속성이 지정되어 있다.  getInstance를 가지고 팩토리 메서드에 미리 객체생성을 한다.
+                         	 이것이 없으면 생성자로 객체 생성한다.-->
+
+</beans>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+<!-- 프리픽스를 사용하지 않은 bean의 예시 -->
+<bean id="developer" class="sample7.Developer">
+	<constructor-arg value="dooly"/>
+	<constructor-arg value="1500000"/>
+	<!-- 객체생성시 두개의 아규먼트를 받는 객체 생성된다. 순서 바꾸고 싶으면 인덱스 지정 -->
+	<property name="dept"   value="Development 1 Team"/>
+</bean><!--  Developer와 Engineer생성 -->
+<bean id="engineer" class="sample7.Engineer">
+	<constructor-arg   value="duke"/>
+	<constructor-arg   value="2500000"/>
+	<property name="dept"   value="Technology 1 Team"/>	
+</bean>
+</beans>

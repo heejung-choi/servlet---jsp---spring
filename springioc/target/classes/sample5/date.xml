@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+<!-- beans만 줘서는 안되고 이 문서의 작성 규칙은 어떻게 된다 라고 작성 규칙을 적용해야 한다. -->
+<bean id="hong" class="sample5.DateVo">
+	<property name="name" value="Duke"/>
+	<property name="birth" value="1990-01-01"/>
+</bean>
+
+<bean id="lee" class="sample5.DateVo" 
+	p:name="Dooly"  p:birth="2000-12-12"/>	
+	
+	<!-- property대신에 호출하고자 하는 setter 메서드에 프리픽스인 p를 붙여서
+	p:name="Dooly" 이렇게 사용하게 되었다. -->
+
+	
+</beans>
+
+ 
+ 

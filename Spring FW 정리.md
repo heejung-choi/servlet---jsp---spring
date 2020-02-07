@@ -107,3 +107,22 @@ http://localhost:8000/springedu
 톰캣재기동 한후에
 http://localhost:8000/springedu/hello
 
+
+
+# spring mvc 프로젝트 생성하는 법
+
+
+
+![image-20200207133425073](C:\Users\student\AppData\Roaming\Typora\typora-user-images\image-20200207133425073.png)
+
+![image-20200207133447204](C:\Users\student\AppData\Roaming\Typora\typora-user-images\image-20200207133447204.png)
+
+
+
+패키지명을 세개 입력해야 한다.
+
+![image-20200207133616866](C:\Users\student\AppData\Roaming\Typora\typora-user-images\image-20200207133616866.png)
+
+my.spring.springedu
+
+마지막 패키지명은 project 명과 같게 해야 한다.
