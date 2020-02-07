@@ -6,7 +6,7 @@ public class MyFoodMgr{
 	private Food unFavoriteFood;	
 	
 	public MyFoodMgr() {}
-	public MyFoodMgr(Food favoriteFood, Food unFavoriteFood) {
+	public MyFoodMgr(Food favoriteFood, Food unFavoriteFood) { //객체 만들때 타입으로 만들어주는데 타입이 2개이면 이름으로 만들어준다.
 		super();
 		this.favoriteFood = favoriteFood;
 		this.unFavoriteFood = unFavoriteFood;

@@ -67,3 +67,43 @@ Eclipse EE - Eclipse for Java Developer + WTP(플러그인:pligin) +STS 추가�
 - 문서 형식 정의(Document Type Definition, DTD)는 컴퓨터 용어로, SGML 계열의 마크업 언어에서 문서 형식을 정의하는 것이다. SGML을 비롯해 HTML, XHTML, XML 등에서 쓰인다.
 - XML Schema는 더 세세히 지정할 수 있다.
 - autowire : 객체를 생성할때 자동으로 결합해달라는 의미이다.
+
+- autowire="byName"  : setter
+  (1) 프로퍼티명과 동일한 명칭의 빈을 찾아서 해당 객체 주입
+  (2) 없으면 null 주입
+
+- autowire="byType"  : setter 의 아규먼트 
+  (1) 타입으로 찾아서 1개이면 해당 객체 주입
+  (2) 타입으로 찾아서 2개 이상이면 NoUniqueBeanDefinitionException 발생
+  (3) 없으면 null 주입
+
+- autowire="constructor"  : constructor (타입으로 찾아서 2개이면 동일한 id값을 갖는다.)
+  (1) 타입으로 찾아서 1개이면 해당 객체 주입
+  (2) 타입으로 찾아서 2개 이상이면 매개변수명과 동일한 id 값을 갖는 객체 주입
+  (3) 없으면 null 주입
+
+
+
+- 필드에 설정된 @Autowired  - Spring FW 전용
+  (1) 타입으로 찾아서 1개이면 해당 객체 주입
+  (2) 타입으로 찾아서 2개 이상이면 변수명과 동일한 id 값을 갖는 객체 주입
+  (3) 없으면 NoSuchBeanDefinitionException 발생
+       (required = false 속성을 사용하여 없으면 null 이 되게 지정 가능)
+  (4) @Qualifier(value="xxx")를 추가로 사용해서 변수명이 아닌 다른 이름 지정 가능
+
+- 필드에 설정된 @Resource  - Java
+  (1) 변수명과 동일한 id 값을 갖는 빈을 찾아서 해당 객체 주입
+  (2) 타입으로 찾아서 1개이면 객체 주입
+  (3) 타입으로 찾아서 2개이상 이면 NoUniqueBeanDefinitionException 발생
+  (4) 없으면 NoSuchBeanDefinitionException 발생
+
+
+
+- Spring MVC Project : springedu
+
+ 패키지명 : my.spring.springedu
+
+http://localhost:8000/springedu
+톰캣재기동 한후에
+http://localhost:8000/springedu/hello
+

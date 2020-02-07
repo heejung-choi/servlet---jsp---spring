@@ -20,14 +20,14 @@
 </bean> -->
 
 <!-- 테스트2 -->
-<bean id="myFood" class="sampleanno02.MyFoodMgr" autowire="constructor"/>
+<bean id="myFood" class="sampleanno02.MyFoodMgr" autowire="byType"/>
 
 <bean id="favoriteFood" class="sampleanno02.Food" >
-	<property name="foodName" value="Noodle"/>
+	<property name="foodName" value="pizza"/>
 	<property name="foodPrice" value="2500"/>
 </bean>
 <bean id="unFavoriteFood" class="sampleanno02.Food" >	
-	<property name="foodName" value="Bread"/>
+	<property name="foodName" value="remon"/>
 	<property name="foodPrice" value="1500"/>
 </bean>
 </beans>
