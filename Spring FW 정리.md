@@ -175,3 +175,19 @@ web.xml 에 해당내용 저장
 ![image-20200207152415687](C:\Users\student\AppData\Roaming\Typora\typora-user-images\image-20200207152415687.png)
 
 html / views 저장하는 파일
+
+
+
+POJO : Plain Old Java Object,
+
+
+
+- @Controller //controller가 되려면 반드시 이렇게 해줘야 한다.
+- @RequestMapping("/hello") // hello로 끝나는 url이면 해당 메서드를 호출해줘 라는 의미
+- 이렇게 맵핑명이 있는 것을 컨드롤러 메서드 또는 핸들러메서드라고 한다.
+
+
+
+	ModelAndView mav = new ModelAndView();
+		//viwe객체와 model객체를 하나로 담는다 model은 vo를 의미한다.
+		//jsp에는 그냥 넘기는것이 아니라 모델을 넘겨야 한다.
