@@ -139,5 +139,39 @@ spring project는 webcontent가 없다.
 
 ![image-20200207141545306](C:\Users\student\AppData\Roaming\Typora\typora-user-images\image-20200207141545306.png)
 
-src-main-webapp-resoures에 이미지, html파일을 넣어야 한다. 다른곳에 넣으면 인식을 못한다. ->클라이언트에 직접 넣을 수 있는것만 넣어야 한다.
+src-main-webapp-resoures에 이미지, html파일을 넣어야 한다. 다른곳에 넣으면 인식을 못한다. ->클라이언트에 직접 넣을 수 있는것
 
+![image-20200207142318892](C:\Users\student\AppData\Roaming\Typora\typora-user-images\image-20200207142318892.png)
+
+UTF-8로 변경 
+
+
+
+![image-20200207142650041](C:\Users\student\AppData\Roaming\Typora\typora-user-images\image-20200207142650041.png)
+
+web.xml 에 해당내용 저장 
+
+<filter>
+<filter-name>encodingFilter</filter-name>
+<filter-class>org.springframework.web.filter.CharacterEncodingFilter</filter-class>
+<!-- 이 서버에 있는 모든 페이지는 CharacterEncodingFilter라는 필터를 거쳐라-->
+    <init-param>
+      <param-name>encoding</param-name>
+      <param-value>UTF-8</param-value>
+<!-- 인코딩이라는 이름이 UTF-8 이라는 값을 저장-->
+    </init-param>
+  </filter>
+  <filter-mapping>
+    <filter-name>encodingFilter</filter-name>
+    <url-pattern>/*</url-pattern>
+  </filter-mapping>
+
+
+
+![image-20200207151525956](C:\Users\student\AppData\Roaming\Typora\typora-user-images\image-20200207151525956.png)
+
+**my.spring.springedu** : 컨트롤러 저장하는 파일
+
+![image-20200207152415687](C:\Users\student\AppData\Roaming\Typora\typora-user-images\image-20200207152415687.png)
+
+html / views 저장하는 파일
