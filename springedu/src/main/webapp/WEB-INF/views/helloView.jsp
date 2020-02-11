@@ -12,9 +12,9 @@
 <%
 String result = (String)request.getAttribute("msg");
 %>
-expression tag : <%= result %> <!-- 스크립트 태그로 꺼낸것 -->
+expression tag : <%= result %>
 <hr>
-EL : ${ msg }  <!-- el태그로 꺼낸것 -->
+EL : ${ msg }
 </body>
 </html>
 
